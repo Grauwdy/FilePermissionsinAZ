@@ -3,7 +3,7 @@
 </p>
 
 <h1>Understanding File Permissions</h1>
-This lab focuses on file permissions and shares in the context of an Active Directory domain. File permissions and shares are key in a business setting to make sure users have the appropriate permissions and access to files they need. This is building up from a previous lab where I have a client joined to my domain ernestotest.com. I am logged in as Jane Doe (an admin account) on the domain controller VM and as a normal user on the client VM. <br />
+This lab focuses on file permissions and shares in the context of an Active Directory domain. File permissions and shares are key in a business setting to make sure users have the appropriate permissions and access to files they need. This is building up from a previous lab where I have a client joined to my domain ernestotest.com. I am logged in as Alain Garcia (an admin account) on the domain controller VM and as a normal user on the client VM. <br />
 
 <h2>Environments and Technologies Used</h2>
 
