@@ -22,19 +22,25 @@ This lab focuses on file permissions and shares in the context of an Active Dire
 <img src="https://i.imgur.com/bUjobDC.png" height="80%" width="80%" alt="Permissions Steps"/>
 <img src="https://i.imgur.com/lz1DMos.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
-<p>
-In order to set permissions to folders and files, we need to create the folders to share. While logged in to the domain controller VM as an admin, create the folders. I have created 4 appropriately named folders to set permissions to on the C:\ drive. To share a folder and assign permissions, open the folder's Properties and click on Share under the Sharing tab. You can specify people on the network to share with and assign appropriate permissions. I set the following permissions for the folders (the accounting folder will be changed later):
+<p>In order to set permissions for folders and files, we need to create the folders for sharing. While logged in to the domain controller VM as an admin, I've created four appropriately named folders on the C:\ drive.</p>
 
-Domain Users can Read the read-access folder and they have Read/Write permissions on the write-access folder.
-Domain Admins have Read/Write access to the no-access folder.
-</p>
+<p>To share a folder and assign permissions, open the folder's Properties and click on Share under the Sharing tab. Specify people on the network to share with and assign appropriate permissions. The permissions for the folders are as follows:</p>
+
+<ol>
+  <li>The read-access folder grants Domain Users Read permissions.</li>
+  <li>The write-access folder gives Domain Users Read/Write permissions.</li>
+  <li>The no-access folder provides Domain Admins with Read/Write access.</li>
+</ol>
+
+<p>It's important to note that the permissions for the accounting folder will be adjusted later in the process. This method demonstrates how folder sharing and permissions can be tailored to specific user groups, ensuring controlled access to shared resources.</p>
+
 <br />
 
 <p>
 <img src="https://i.imgur.com/kWrpLFE.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
-On the client VM, navigate to the shared folders through the following path in File Explorer: \\dc-1. Notice how some folders cannot allow you to add files, but only view them. One does not allow access at all. This is because as a Domain User, permissions for the folder are tied to the respective Security Group and the folder's own set permissions for users within that Security Group.
+On the client VM, access the shared folders by navigating through File Explorer using the path \dc-1. Observe that certain folders restrict you from adding files, allowing only a view. Moreover, there might be a folder that denies access altogether. These restrictions exist because, as a Domain User, your permissions for each folder are intricately tied to both the Security Group to which you belong and the specific permissions configured for users within that Security Group. This setup showcases the nuanced and granular control that can be exerted over file access within a Windows/Active Directory environment.
 </p>
 <br />
 
@@ -43,7 +49,7 @@ On the client VM, navigate to the shared folders through the following path in F
 <img src="https://i.imgur.com/I4k9T2J.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
-Next, we will make a new Security Group and assign appropriate permissions to the accounting folder. On the domain controller, have the Active Directory Users and Computers panel open. Create a new Group called ACCOUNTANTS. After creating the new Group, go to the accounting folder and assign permissions to the folder so the ACCOUNTANTS Group has Read/Write permissions.
+Following the process on the domain controller, with the Active Directory Users and Computers panel open, create a new Security Group named ACCOUNTANTS. Once the new Group is established, proceed to the accounting folder and configure permissions to grant the ACCOUNTANTS Group Read/Write access to the folder. This ensures that members of the ACCOUNTANTS Group will have the appropriate permissions for accessing and modifying the contents of the accounting folder. This method demonstrates how Security Groups can be tailored to specific folders, allowing for streamlined access management in Active Directory environments.
 </p>
 <br />
 
@@ -52,9 +58,16 @@ Next, we will make a new Security Group and assign appropriate permissions to th
 <img src="https://i.imgur.com/SHotVB2.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
-The user cannot access the accounting folder because they are not part of the ACCOUNTANTS Security Group. Log off the client so that the permissions are in place by the time the client is logged into again. On the domain controller, open the ACCOUNTANTS Properties on Active Directory Users and Computers. In the Members tab, add the respective user. In my case, it is bon.rovej. Upon logging into the client, bon.rovej is now able to open the accounting folder because they are part of ACCOUNTANTS.
+In this scenario, the user is unable to access the accounting folder as they are not part of the ACCOUNTANTS Security Group. To address this, it's necessary to log off the client, allowing the permissions to take effect upon the next login.
+
+On the domain controller, open the ACCOUNTANTS Properties in Active Directory Users and Computers. Navigate to the Members tab and add the respective user— in this case, bon.rovej. Once this adjustment is made, logging back into the client allows BLANK_ to successfully access the accounting folder, as they are now part of the ACCOUNTANTS Security Group. This demonstrates how effective management of Security Groups in Active Directory ensures precise access control for users.
 <br />
 
 <h2>Lessons Learned </h2>
 
-This lab made me understand how file permissions work in the context of Windows/Active Directory. In a real setting, I might have to set permissions so that people can only access what they need to in order to complete their work. It is not necessary to give more permissions than what is needed.
+This lab has provided me with a valuable insight into the workings of file permissions within the Windows/Active Directory environment. Understanding how file permissions operate is crucial for real-world scenarios where precise access control is essential. The importance of granting only the necessary permissions to individuals, ensuring they have access only to what is required for their tasks, has become evident. This practice not only enhances security but also ensures efficient workflow by limiting access to relevant resources. It emphasizes the principle of providing the minimum necessary permissions, a fundamental approach in effective access management within Windows and Active Directory environments.
+
+
+
+
+
