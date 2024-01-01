@@ -54,13 +54,13 @@ Following the process on the domain controller, with the Active Directory Users 
 <br />
 
 <p>
-<img src="https://i.imgur.com/xev1Svv.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/OrL36SQ.png" height="80%" width="80%" alt="Permissions Steps"/>
 <img src="https://i.imgur.com/SHotVB2.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
 In this scenario, the user is unable to access the accounting folder as they are not part of the ACCOUNTANTS Security Group. To address this, it's necessary to log off the client, allowing the permissions to take effect upon the next login.
 
-On the domain controller, open the ACCOUNTANTS Properties in Active Directory Users and Computers. Navigate to the Members tab and add the respective user— in this case, bon.rovej. Once this adjustment is made, logging back into the client allows BLANK_ to successfully access the accounting folder, as they are now part of the ACCOUNTANTS Security Group. This demonstrates how effective management of Security Groups in Active Directory ensures precise access control for users.
+On the domain controller, open the ACCOUNTANTS Properties in Active Directory Users and Computers. Navigate to the Members tab and add the respective user— in this case, Gadusu.Woker. Once this adjustment is made, logging back into the client allows Gadusu.Woker to successfully access the accounting folder, as they are now part of the ACCOUNTANTS Security Group. This demonstrates how effective management of Security Groups in Active Directory ensures precise access control for users.
 <br />
 
 <h2>Lessons Learned </h2>
