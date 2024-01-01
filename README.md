@@ -55,7 +55,7 @@ Following the process on the domain controller, with the Active Directory Users 
 
 <p>
 <img src="https://i.imgur.com/xev1Svv.png" height="80%" width="80%" alt="Permissions Steps"/>
-<img src="https://i.imgur.com/j8SkuVR.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/SHotVB2.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
 In this scenario, the user is unable to access the accounting folder as they are not part of the ACCOUNTANTS Security Group. To address this, it's necessary to log off the client, allowing the permissions to take effect upon the next login.
