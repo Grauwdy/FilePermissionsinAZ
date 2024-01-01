@@ -19,8 +19,8 @@ This lab focuses on file permissions and shares in the context of an Active Dire
 <h2>File Permissions Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/bUjobDC.png" height="80%" width="80%" alt="Permissions Steps"/>
-<img src="https://i.imgur.com/lz1DMos.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/5Yex3au.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/vlVTF9N.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>In order to set permissions for folders and files, we need to create the folders for sharing. While logged in to the domain controller VM as an admin, I've created four appropriately named folders on the C:\ drive.</p>
 
@@ -37,7 +37,7 @@ This lab focuses on file permissions and shares in the context of an Active Dire
 <br />
 
 <p>
-<img src="https://i.imgur.com/kWrpLFE.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/LbFBFk1.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
 On the client VM, access the shared folders by navigating through File Explorer using the path \dc-1. Observe that certain folders restrict you from adding files, allowing only a view. Moreover, there might be a folder that denies access altogether. These restrictions exist because, as a Domain User, your permissions for each folder are intricately tied to both the Security Group to which you belong and the specific permissions configured for users within that Security Group. This setup showcases the nuanced and granular control that can be exerted over file access within a Windows/Active Directory environment.
@@ -45,7 +45,7 @@ On the client VM, access the shared folders by navigating through File Explorer 
 <br />
 
 <p>
-<img src="https://i.imgur.com/NgM0CcI.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/7hl3rBg.png" height="80%" width="80%" alt="Permissions Steps"/>
 <img src="https://i.imgur.com/I4k9T2J.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
@@ -55,7 +55,7 @@ Following the process on the domain controller, with the Active Directory Users 
 
 <p>
 <img src="https://i.imgur.com/xev1Svv.png" height="80%" width="80%" alt="Permissions Steps"/>
-<img src="https://i.imgur.com/SHotVB2.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/j8SkuVR.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
 In this scenario, the user is unable to access the accounting folder as they are not part of the ACCOUNTANTS Security Group. To address this, it's necessary to log off the client, allowing the permissions to take effect upon the next login.
